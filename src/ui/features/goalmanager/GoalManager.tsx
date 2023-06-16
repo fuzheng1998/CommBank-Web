@@ -41,8 +41,7 @@ export function GoalManager(props: Props) {
     }
 
     dispatch(updateGoalRedux(updatedGoal))
-
-    // TODO(TASK-3) Update database
+    updateGoalApi(props.goal.id, updatedGoal)
   }
   const dispatch = useAppDispatch()
 
@@ -148,8 +147,8 @@ export function GoalManager(props: Props) {
         <EmojiPicker onClick={pickEmojiOnClick} />
       </EmojiPickerContainer>
       <GoalIconContainer shouldShow={hasIcon()}>
-      <GoalIcon icon={goal.icon} onClick={addIconOnClick} />
-    </GoalIconContainer>
+        <GoalIcon icon={goal.icon} onClick={addIconOnClick} />
+      </GoalIconContainer>
     </GoalManagerContainer>
   )
 }
